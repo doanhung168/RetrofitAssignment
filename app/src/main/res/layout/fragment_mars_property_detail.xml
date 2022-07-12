@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.retrofitassignment.viewmodel.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imv"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/image_dimens"
+            android:layout_marginStart="@dimen/medium_dimens"
+            android:layout_marginTop="@dimen/large_dimens"
+            android:layout_marginEnd="@dimen/medium_dimens"
+            android:scaleType="centerCrop"
+            app:error="@{@drawable/ic_broken_image}"
+            app:imageUrl="@{viewModel.currentMarsProperty.imgSrc}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loading="@{@drawable/ic_placeholder_image}"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_dimens"
+            android:text="@{viewModel.currentMarsProperty.type}"
+            android:textSize="@dimen/large_text_dimens"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/imv"
+            app:layout_constraintTop_toBottomOf="@+id/imv"
+            tools:text="For sale" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_dimens"
+            android:textSize="@dimen/medium_text_dimens"
+            app:currencyText="@{viewModel.currentMarsProperty.price}"
+            app:layout_constraintStart_toStartOf="@+id/tvType"
+            app:layout_constraintTop_toBottomOf="@+id/tvType"
+            tools:text="15000" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

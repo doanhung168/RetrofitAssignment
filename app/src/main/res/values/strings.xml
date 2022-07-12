@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">RetrofitAssignment</string>
+    <string name="an_error_has_occurred">An error has occurred</string>
+    <string name="retry">Retry</string>
+    <string name="all">All</string>
+    <string name="rent">rent</string>
+    <string name="buy">buy</string>
+    <string name="marsproperty_detail">MarsProperty Detail</string>
+    <string name="marsproperty_list">MarsProperty List</string>
 </resources>
